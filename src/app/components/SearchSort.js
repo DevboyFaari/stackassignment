@@ -1,4 +1,3 @@
-// components/SearchSort.js
 import { useState } from 'react';
 
 const SearchSort = ({ onSearch, onSort }) => {

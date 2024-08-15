@@ -1,4 +1,3 @@
-// components/CharacterDetail.js
 const UserDetail = ({ character, onClose }) => {
     if (!character) return null;
   
