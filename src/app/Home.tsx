@@ -104,7 +104,7 @@ const Home = () => {
               <option value="">Filter by Status</option>
               <option value="Alive">Alive</option>
               <option value="Dead">Dead</option>
-              <option value="unknown">Unknown</option>
+              <option value="unknown">Unknowns</option>
             </select>
             <select
               name="gender"
