@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# A Simple GraphQL Dashboard
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a simple dashboard application built with React, Next.js, Tailwind CSS, and GraphQL. It fetches and displays a list of characters from the Rick and Morty API. I couldnt find a graphQL API with the parameters of the assessment listed. The application supports features such as searching, filtering, sorting, pagination, and detailed views of selected characters. Although the sort functionality doesnt work because I dont think the API allows for that.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Thought Process
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Architecture and Design
+- **React and Next.js**: Chose Next.js for its server-side rendering (SSR) capabilities and its easy integration with React. This enhances the performance.
+- **State Management**: Used React-redux API for global state management.
+- **GraphQL**: GraphQL was used for efficient data fetching. By using Apollo Client, the app benefits from caching, automatic refetching, and easy integration with GraphQL endpoints.
+- **UI/UX**: The user interface is kept clean and minimal using Tailwind CSS, ensuring a responsive and visually appealing design. A simple layout with clear interactions was prioritized for better user experience.
+- **Component Structure**: Components are divided into smaller, reusable parts like `UserList`, `UserDetail`, and `Home`. This promotes modularity and easy maintenance.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Features
+- **Search and Filter**: The dashboard allows users to search and filter characters based on name, species, status, and gender.
+- **Pagination**: Pagination is implemented to manage large datasets, improving performance and user experience.
+- **Detail View**: Clicking on a character displays more details in a modal view.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Assumptions and Decisions
+- **Sorting on the Client-Side**: Sorting was implemented on the client-side as the Rick and Morty API does not natively support sorting. This approach is suitable given the scope of the application.
+- **No Custom Backend**: Assumed that a custom backend was not needed, given the direct use of the Rick and Morty API.
+- **Simple State Management**: Opted for React Redux instead of a simpler state management tool, cos I'm bad like that.
+- **Basic Unit Testing**: I have no idea how to do unit tests, actually :)
 
-## Learn More
+## Setup Instructions
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
+- Node.js (v14.x or later)
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
+1. **Clone the repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   git clone https://github.com/DevboyFaari/stackassignment.git
+   cd stack
+   cd stackapp
 
-## Deploy on Vercel
+2. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    npm install
+    # or
+    yarn install   
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Run the development server:
+
+    npm run dev
+    # or
+    yarn dev    
+
+ 4. Open application in your browser
+ http://localhost:3000
+
+
+Project structure
+├── components
+│   ├── DashboardLayout.js
+│   ├── UserList.js
+│   ├── UserDetail.js
+├── graphql
+│   ├── queries.js
+├── lib
+|   ├──apolloClient.js
+├── pages
+│   ├── index.js (Home component)
+├── redux 
+|   ├── characterSlide.js
+│   ├── store.js
+├── globals.css
+├── README.md
+├── package.json
+├── tailwind.config.ts
+
+### Technologies Used
+React: For building the user interface.
+Next.js: For server-side rendering and routing.
+Apollo Client: For handling GraphQL queries and caching.
+Tailwind CSS: For styling the application.
+
+
+### Future Improvements
+Server-Side Sorting and Filtering: If the API supports it in the future, moving sorting and filtering to the server-side could improve performance for large datasets.
+
+
+### Conclusion
+This project demonstrates a clean and maintainable approach to building a simple dashboard application. The focus was on creating a responsive UI, integrating with a GraphQL API, and managing state effectively while keeping the application structure modular and scalable.
