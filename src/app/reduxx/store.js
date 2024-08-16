@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import characterReducer from './characterSlice';
+import characterReducer from './characterrSlice';
 
 const store = configureStore({
   reducer: {

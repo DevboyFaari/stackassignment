@@ -1,7 +1,7 @@
 "use client";
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import Home from './Home';
+import { Provider } from "react-redux";
+import store from "./reduxx/store";
+import Home from "./Home";
 
 const App = () => (
   <Provider store={store}>

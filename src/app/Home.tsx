@@ -10,7 +10,7 @@ import {
   setFilters,
   setSortBy,
   clearCharacter,
-} from "./redux/characterSlice";
+} from "./reduxx/characterrSlice";
 
 const Home = () => {
   //Uncomment this, if you want to remove the redux parameters
